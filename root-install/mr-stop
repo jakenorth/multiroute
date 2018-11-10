@@ -1,0 +1,3 @@
+statefile = open("mr/state","w+")
+statefile.write("OFF")
+statefile.close()
