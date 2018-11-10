@@ -1,7 +1,7 @@
 # Enter your custom config code here
 
 routes = {
-	"example.com": "example"
+	"localhost:5000": "example"
 }
 
 def route(host):

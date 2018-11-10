@@ -11,4 +11,9 @@ def route(path, request):
 	import random
 	jobid = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(32)])
 	#Write job file
-	jobfile = open(jobid+".mrj","w+")
+	jobfile = open("jobs/"+jobid+".job","w+")
+	jobfile.write('~&&~'.join([path,str(request.args)]))
+	jobfile.close()
+	#Write to manifest
+	manfile = open("jobs/"+route_goal+".man","a+")
+	manfile.write(jobid+".job~&&~")
